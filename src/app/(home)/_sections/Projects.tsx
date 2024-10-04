@@ -18,10 +18,27 @@ type TProjectCard = {
 
 const ProjectCard = ({id,imageURL,isEven}:TProjectCard) => {
 
+    const randomElevationPercent = Math.round(Math.random() * 5)
+    const card = useRef<HTMLDivElement>(null)
 
+    useLayoutEffect(()=>{
+        gsap.fromTo(card.current,{
+            yPercent:0
+        },{
+            yPercent:randomElevationPercent,
+            scrollTrigger:{
+                trigger:card.current,
+                start:"top 60vh",
+                end:"bottom top",
+                scrub:1.5,
+                pin:true,
+            }
+        })
+    },[])
 
     return (
         <div 
+            ref={card}
             className="w-[150px] h-[200px] md:w-[200px] md:h-[270px] lg:w-[300px] lg:h-[400px] bg-zinc-400" 
             key={id}
             style={{
@@ -51,8 +68,8 @@ function Projects() {
             scrollTrigger:{
                 trigger:section.current,
                 start:"bottom bottom",
-                end:"+=3000px",
-                scrub:1.5,
+                end:"+=2000px",
+                scrub:true,
                 pin:true,
             }
         })
