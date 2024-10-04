@@ -20,6 +20,7 @@ type TExperienceCard = {
     subTitle:string,
     order:number
 }
+
 const Card = ({ title, subTitle, order }:TExperienceCard) => {
     const className = order == 1 ? "bg-white text-black" : "text-white"
     const margin = (order % 2 == 0) ? `calc(100%/${experience.length}) 0 0 0` : `0 0 calc(100%/${experience.length}) 0`
