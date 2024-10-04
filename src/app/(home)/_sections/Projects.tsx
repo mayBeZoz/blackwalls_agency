@@ -1,7 +1,7 @@
 'use client'
 
 import { useLayoutEffect, useRef } from "react"
-import projects from "@/data/projects.json"
+// import projects from "@/data/projects.json"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
 
