@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    background-color: black;
+    color:#ffffff
+}
+
+@font-face {
+    font-family: 'Disket Mono';
+    src: url(/fonts/Disket-Mono-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url(/fonts/VCR-OSD-MONO.ttf);
+}
+
+
+.container {
+    @apply w-[90%] max-w-screen-xl ;
+}
+
+
+.home_hero_scroll_button {
+    @apply w-[170px] lg:w-[270px] relative p-12 left-8 lg:-top-16 aspect-square rounded-full md:w-[210px] border-white border flex justify-center items-center hover:bg-white duration-200
+}
+
