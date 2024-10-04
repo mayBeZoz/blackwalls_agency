@@ -14,16 +14,18 @@ type TProjectCard = {
     description: string;
     id: number;
     isEven: boolean;
+    index:number
 }
 
-const ProjectCard = ({id,imageURL,isEven}:TProjectCard) => {
+const ProjectCard = ({id,imageURL,isEven,index}:TProjectCard) => {
 
     return (
         <div 
             className="w-[150px] h-[200px] md:w-[200px] md:h-[270px] lg:w-[300px] lg:h-[400px] bg-zinc-400" 
             key={id}
             style={{
-                margin:isEven ? "0 auto 0 0" : "0 0 0 auto"
+                margin:isEven ? "0 auto 0 0" : "0 0 0 auto",
+                marginTop:(index % 2 === 0) ? "4em" : "14em"
             }}
         >
             <img 
@@ -44,7 +46,7 @@ function Projects() {
         gsap.fromTo(projectImagesWrapper.current,{
             top:'100%'
         },{
-            top:"-125%",
+            top:"-150%",
             duration:4,
             scrollTrigger:{
                 trigger:section.current,
@@ -75,8 +77,8 @@ function Projects() {
                             return (
                                 <div key={idx} className="w-full mb-52 flex">
                                     {
-                                        couple.map(project => (
-                                            <ProjectCard key={project.id} isEven={isEven} {...project}/>
+                                        couple.map((project,index) => (
+                                            <ProjectCard index={index} key={project.id} isEven={isEven} {...project}/>
                                         ))
                                     }
                                 </div>
