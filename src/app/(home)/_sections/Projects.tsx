@@ -44,10 +44,11 @@ function Projects() {
 
     useLayoutEffect(()=>{
         gsap.fromTo(projectImagesWrapper.current,{
-            top:'100%'
+            bottom:'-100%'
         },{
-            top:"-150%",
+            bottom:"100%",
             duration:4,
+            ease:"power1.inOut",
             scrollTrigger:{
                 trigger:section.current,
                 start:"bottom bottom",
