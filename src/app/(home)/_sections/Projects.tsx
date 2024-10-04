@@ -16,7 +16,7 @@ type TProjectCard = {
     isEven: boolean;
 }
 
-const ProjectCard = ({description,id,imageURL,name,isEven}:TProjectCard) => {
+const ProjectCard = ({id,imageURL,isEven}:TProjectCard) => {
 
 
 
