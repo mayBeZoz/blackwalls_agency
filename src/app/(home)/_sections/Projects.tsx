@@ -1,11 +1,41 @@
 'use client'
 
 import { useLayoutEffect, useRef } from "react"
-// import projects from "@/data/projects.json"
+import projects from "@/data/projects.json"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
+import { TProject } from "@/types"
 
 gsap.registerPlugin(ScrollTrigger)
+
+type TProjectCard = {
+    name: string;
+    imageURL: string;
+    description: string;
+    id: number;
+    isEven: boolean;
+}
+
+const ProjectCard = ({description,id,imageURL,name,isEven}:TProjectCard) => {
+
+
+
+    return (
+        <div 
+            className="w-[150px] h-[200px] md:w-[200px] md:h-[270px] lg:w-[300px] lg:h-[400px] bg-zinc-400" 
+            key={id}
+            style={{
+                margin:isEven ? "0 auto 0 0" : "0 0 0 auto"
+            }}
+        >
+            <img 
+                className="w-full hover:[filter:grayscale(1)] duration-300 h-full block object-cover" 
+                src={imageURL} 
+                alt="img" 
+            />
+        </div>
+    )
+}
 
 function Projects() {
     
@@ -21,26 +51,42 @@ function Projects() {
             scrollTrigger:{
                 trigger:section.current,
                 start:"bottom bottom",
-                // end:"+=1000px",
-                scrub:true,
+                end:"+=3000px",
+                scrub:1.5,
                 pin:true,
             }
         })
     },[])
+    
+    const coupleProjects : TProject[][] = []  
+    projects.forEach((curr,idx) => {
+        if (!(idx % 2 !== 0)) 
+            coupleProjects.push([curr,projects[idx+1]])
+    })
 
     return (
         <section ref={section} className='h-screen overflow-hidden relative'>
-            <div className="container relative z-10 h-full flex justify-center items-center">
+            <div className="container h-full flex justify-center items-center">
                 <h3 className='text-8xl font-vcr-osd-mono uppercase text-center'>blackwall is your compass in real estate</h3>
             </div>
-            <div ref={projectImagesWrapper} className="absolute w-full bg-slate-200 h-[1000px] z-0 top-[100%] left-0">
-                {/* {
-                    projects.map((project) => (
-                        <div className="" key={project.id}>
-
-                        </div>
-                    ))
-                } */}
+            <div ref={projectImagesWrapper} className="absolute w-full z-20 top-[100%] ">
+                <div className="container">
+                    {
+                        coupleProjects.map((couple,idx) => {
+                            const isEven = idx % 2 === 0
+                            return (
+                                <div key={idx} className="w-full mb-52 flex">
+                                    {
+                                        couple.map(project => (
+                                            <ProjectCard key={project.id} isEven={isEven} {...project}/>
+                                        ))
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                    
+                </div>
             </div>
         </section>
     )

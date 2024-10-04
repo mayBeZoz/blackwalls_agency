@@ -1,49 +1,49 @@
 [
     {
         "name":"project 1",
-        "imageURL":"",
+        "imageURL":"/images/projects/1.jpg",
         "description":"lorem ipsum dolor sit amet, consectetur adip",
         "id":1
     },
     {
         "name":"project 1",
-        "imageURL":"",
+        "imageURL":"/images/projects/2.jpg",
         "description":"lorem ipsum dolor sit amet, consectetur adip",
         "id":2
     },
     {
         "name":"project 1",
-        "imageURL":"",
+        "imageURL":"/images/projects/3.webp",
         "description":"lorem ipsum dolor sit amet, consectetur adip",
         "id":3
     },
     {
         "name":"project 1",
-        "imageURL":"",
+        "imageURL":"/images/projects/4.jpg",
         "description":"lorem ipsum dolor sit amet, consectetur adip",
         "id":4
     },
     {
         "name":"project 1",
-        "imageURL":"",
+        "imageURL":"/images/projects/5.jpg",
         "description":"lorem ipsum dolor sit amet, consectetur adip",
         "id":5
     },
     {
         "name":"project 1",
-        "imageURL":"",
+        "imageURL":"/images/projects/6.webp",
         "description":"lorem ipsum dolor sit amet, consectetur adip",
         "id":6
     },
     {
         "name":"project 1",
-        "imageURL":"",
+        "imageURL":"/images/projects/7.jpg",
         "description":"lorem ipsum dolor sit amet, consectetur adip",
         "id":7
     },
     {
         "name":"project 1",
-        "imageURL":"",
+        "imageURL":"/images/projects/8.jpg",
         "description":"lorem ipsum dolor sit amet, consectetur adip",
         "id":8
     }
