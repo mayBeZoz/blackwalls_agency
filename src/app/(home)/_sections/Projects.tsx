@@ -52,7 +52,7 @@ function Projects() {
             scrollTrigger:{
                 trigger:section.current,
                 start:"bottom bottom",
-                end:"+=2000px",
+                end:"+=4000px",
                 scrub:true,
                 pin:true,
             }
