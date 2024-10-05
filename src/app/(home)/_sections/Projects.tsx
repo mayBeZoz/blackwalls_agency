@@ -46,7 +46,7 @@ function Projects() {
         gsap.fromTo(projectImagesWrapper.current,{
             yPercent:100
         },{
-            yPercent:-25,
+            yPercent:-125,
             ease:"power1.inOut",
             duration:4,
             scrollTrigger:{
