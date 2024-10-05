@@ -1,13 +1,12 @@
 'use client'
 
-import { useLayoutEffect, useRef } from "react"
+import { useRef } from "react"
 import projects from "@/data/projects.json"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
 import { TProject } from "@/types"
 import { useGSAP } from "@gsap/react"
 import Card from "./Card"
-import StaggeredText from "@/ui/StaggeredText"
 
 gsap.registerPlugin(ScrollTrigger)
 

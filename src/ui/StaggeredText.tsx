@@ -32,7 +32,7 @@ function StaggeredText({text}:TStaggeredTextProps) {
                 
                 text.split("").map((char,idx) => (
                     char === " " ?
-                    <span className="ml-3 inline-block"/>
+                    <span key={idx} className="ml-3 inline-block"/>
                     : 
                     <span key={idx} className="overflow-hidden inline-block">
                         <span className="heading_char inline-block">{char}</span>

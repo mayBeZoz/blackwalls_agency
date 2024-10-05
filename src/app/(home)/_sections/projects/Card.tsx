@@ -1,10 +1,11 @@
+import Link from 'next/link';
 import React from 'react'
 
 type TProjectCardProps = {
     name: string;
     imageURL: string;
     description: string;
-    id: number;
+    id: string;
     isEven: boolean;
     index:number
 }
@@ -12,7 +13,8 @@ type TProjectCardProps = {
 const Card = ({id,imageURL,isEven,index}:TProjectCardProps) => {
 
     return (
-        <div 
+        <Link
+            href={`/projects/${id}`} 
             className="w-[150px] h-[200px] md:w-[200px] md:h-[270px] lg:w-[300px] lg:h-[400px] bg-zinc-400" 
             key={id}
             style={{
@@ -21,11 +23,11 @@ const Card = ({id,imageURL,isEven,index}:TProjectCardProps) => {
             }}
         >
             <img 
-                className="w-full duration-300 h-full block object-cover" 
+                className="w-full grayscale-[1] hover:grayscale-0 duration-300 h-full block object-cover" 
                 src={imageURL} 
                 alt="img" 
             />
-        </div>
+        </Link>
     )
 }
 
