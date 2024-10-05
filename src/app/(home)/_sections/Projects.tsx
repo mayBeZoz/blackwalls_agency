@@ -70,7 +70,7 @@ function Projects() {
             <div className="container h-full flex justify-center items-center">
                 <h3 className='text-8xl font-vcr-osd-mono uppercase text-center'>blackwall is your compass in real estate</h3>
             </div>
-            <div ref={projectImagesWrapper} className="absolute w-full z-20 top-[100%] ">
+            <div ref={projectImagesWrapper} className="absolute w-full z-20 ">
                 <div className="container">
                     {
                         coupleProjects.map((couple,idx) => {
