@@ -1,8 +1,9 @@
 'use client'
 
+import { ContextSafeFunc, useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
-import { useLayoutEffect, useRef } from "react"
+import { useRef } from "react"
 
 gsap.registerPlugin(ScrollTrigger)
 function ParallaxImages() {
@@ -10,11 +11,11 @@ function ParallaxImages() {
     const rightImg = useRef<HTMLDivElement>(null) 
 
 
-    useLayoutEffect(()=>{
+    useGSAP((_,contextSafe)=>{
         const left = leftImg.current
         const right = rightImg.current
 
-        const handleMouseMove = (e:MouseEvent)=>{
+        const handleMouseMove = (contextSafe as ContextSafeFunc)((e:MouseEvent)=>{
             const x = (e.clientX / window.innerWidth) - 0.5
             const y = (e.clientY / window.innerHeight) - 0.5
 
@@ -31,7 +32,7 @@ function ParallaxImages() {
                 duration:2,
                 rotate:-(6+x)*1.25
             })
-        }
+        }) 
 
         gsap.to([left,right],{
             scrollTrigger:{
@@ -57,7 +58,7 @@ function ParallaxImages() {
 
         return () => document.removeEventListener("mousemove",handleMouseMove)
         
-    },[])
+    })
 
 
     return (

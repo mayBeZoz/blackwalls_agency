@@ -1,22 +1,27 @@
 "use client"
 
+import { ContextSafeFunc, useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/all"
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 
 gsap.registerPlugin(ScrollToPlugin)
 function ScrollButton() {
     
     const btn = useRef<HTMLButtonElement>(null)
     
-    useEffect(()=>{
-        const button = btn.current
-        if (button) {
-            button.addEventListener("click", () => {
-                gsap.to(window, { duration: 1, scrollTo: "#about", ease:"power1.inOut" });
-            })
+    useGSAP((_,contextSafe)=>{
+
+        const handleClick = (contextSafe as ContextSafeFunc)(() => {
+            gsap.to(window, { duration: 1, scrollTo: "#about", ease:"power1.inOut" });
+        })
+
+        btn.current?.addEventListener("click", handleClick)
+        
+        return () => {
+            btn.current?.removeEventListener("click", handleClick)
         }
-    },[])
+    })
 
     return (
         <button 
