@@ -44,9 +44,9 @@ function Projects() {
 
     useLayoutEffect(()=>{
         gsap.fromTo(projectImagesWrapper.current,{
-            top:'100%'
+            xPercent:100
         },{
-            top:"-150%",
+            xPercent:-123,
             ease:"power1.inOut",
             duration:4,
             scrollTrigger:{
