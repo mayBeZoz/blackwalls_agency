@@ -39,7 +39,6 @@ function Projects() {
     })
     
 
-    
 
     return (
         <section ref={section} className='h-screen overflow-hidden relative'>
