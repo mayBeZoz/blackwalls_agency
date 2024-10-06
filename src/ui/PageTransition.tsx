@@ -1,22 +1,27 @@
 "use client"
 
 import { Children } from '@/types'
-import { motion } from 'framer-motion'
-import React from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { useRef } from 'react'
 
 function PageTransition({ children }:Children) {
+
+    const page = useRef<HTMLElement>(null)
+
+    useGSAP(()=>{
+        gsap.fromTo(page.current,{
+            opacity:0
+        },{
+            opacity:1,
+            duration:0.8,
+            ease:"power1.inOut"
+        })
+    })
     return (
-        <motion.div
-            exit={{opacity:0}}
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            transition={{
-                duration: 0.8,
-            }}
-            className='w-full h-fit'
-        >
+        <main ref={page}>
             { children }
-        </motion.div>
+        </main>
     )
 }
 
