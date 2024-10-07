@@ -1,5 +1,7 @@
 import React from 'react'
 import projects from "@/data/projects.json"
+import { GoArrowLeft } from 'react-icons/go'
+import Link from 'next/link'
 
 type TProjectPageProps = {
     params:{
@@ -17,11 +19,18 @@ function ProjectPage({ params }:TProjectPageProps) {
     rit mollitia tenetur maxime iste unde aperiam, commodi, beatae molestiae veniam rerum nesciunt in
     cidunt, voluptates distinctio dignissimos pariatur dolorem.`
 
+
+
     return (
         <section>
             <div className="container gap-10 flex md:flex-row flex-col relative z-20 h-screen pt-[200px]">
 
                 <div className='w-full md:w-1/2 flex justify-center flex-col md:h-full'>
+
+                    <Link href='/#projects' className="w-[70px] flex justify-center duration-300 hover:text-black hover:bg-white mb-24 items-center aspect-square rounded-full border-white border-2">
+                        <GoArrowLeft className='text-4xl '/>
+                    </Link>
+
                     <h2 className='font-vcr-osd-mono uppercase mb-24 text-6xl'>{project?.name}</h2>
                     <p className='w-full text-2xl font-disket-mono'>{description}</p>
                 </div>

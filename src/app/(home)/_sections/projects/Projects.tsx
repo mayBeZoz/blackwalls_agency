@@ -41,7 +41,7 @@ function Projects() {
 
 
     return (
-        <section ref={section} className='h-screen overflow-hidden relative'>
+        <section id="projects" ref={section} className='h-screen overflow-hidden relative'>
 
             <div className="container h-full flex justify-center items-center">
                 <h3 className='text-8xl flex-wrap font-vcr-osd-mono uppercase text-center'>
