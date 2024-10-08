@@ -3,6 +3,7 @@ import "../globals.css";
 import { ReactNode } from "react";
 import Header from "./_layout/Header";
 import LenisProvider from "./_providers/LenisProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
     title: "Construction Agency",
@@ -19,6 +20,7 @@ export default function RootLayout({children}: TRootLayoutProps) {
                 <LenisProvider>
                     <Header/>
                     {children}
+                    <Toaster />
                 </LenisProvider>
             </body>
         </html>

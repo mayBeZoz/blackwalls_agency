@@ -28,3 +28,13 @@
     @apply w-[170px] lg:w-[270px] relative p-12 left-8 lg:-top-16 aspect-square rounded-full md:w-[210px] border-white border flex justify-center items-center hover:bg-white duration-200
 }
 
+input, textarea {
+    background: none;
+    outline: none;
+}
+
+@layer base {
+  :root {
+        --radius: 0.5rem
+    }
+}
