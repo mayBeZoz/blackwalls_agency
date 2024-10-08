@@ -26,6 +26,7 @@ const actionTypes = {
 } as const
 
 let count = 0
+console.log(actionTypes)
 
 function genId() {
   count = (count + 1) % Number.MAX_SAFE_INTEGER
@@ -33,6 +34,7 @@ function genId() {
 }
 
 type ActionType = typeof actionTypes
+
 
 type Action =
   | {
