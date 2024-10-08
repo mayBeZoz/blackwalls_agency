@@ -1,7 +1,6 @@
 "use client"
 
 import { useToast } from "@/hooks/use-toast"
-import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
 
 
