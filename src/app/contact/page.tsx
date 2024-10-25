@@ -1,8 +1,11 @@
+import { config } from "@/lib/config"
 import Background from "./_components/Background"
 import ContactForm from "./_components/ContactForm"
 
 function Contact() {
-    const email = "blackwall@dummy.xyz"
+
+    const {email} = config
+
     return (
         <section>
             <div className="container relative pb-[70px] pt-[150px]">

@@ -22,34 +22,31 @@ function ProjectPage({ params }:TProjectPageProps) {
 
 
     return (
-        <section>
-            <div className="container gap-10 flex md:flex-row flex-col relative z-20 h-screen pt-[200px]">
+        <section className='relative py-6'>
+            <div className="container gap-10 flex lg:flex-row flex-col min-h-screen relative z-20 ">
 
-                <div className='w-full md:w-1/2 flex justify-center flex-col md:h-full'>
+                <div className='w-full lg:w-1/2 flex justify-center flex-col'>
+                    <div className='w-full'>
+                        <Link href='/#projects' className="w-[70px] flex justify-center duration-300 hover:text-black hover:bg-white mb-24 items-center aspect-square rounded-full border-white border-2">
+                            <GoArrowLeft className='text-4xl '/>
+                        </Link>
 
-                    <Link href='/#projects' className="w-[70px] flex justify-center duration-300 hover:text-black hover:bg-white mb-24 items-center aspect-square rounded-full border-white border-2">
-                        <GoArrowLeft className='text-4xl '/>
-                    </Link>
-
-                    <h2 className='font-vcr-osd-mono uppercase mb-24 text-6xl'>{project?.name}</h2>
-                    <p className='w-full text-2xl font-disket-mono'>{description}</p>
+                        <h2 className='font-vcr-osd-mono uppercase mb-24 text-6xl'>{project?.name}</h2>
+                        <p className='w-full text-2xl font-disket-mono'>{description}</p>
+                    </div>
                 </div>
 
-                <div className='w-full gap-10 flex items-center md:w-1/2 md:h-full'>
+                <div className='w-full gap-10 flex items-center mx-auto sm:w-2/3 lg:w-1/2'>
                     <img 
                         src={project?.imageURL}                     
                         alt={project?.name} 
-                        className='w-full h-[300px] md:h-[400px] object-cover'
+                        className='w-full h-[300px] lg:h-[400px] object-cover'
                     />
-
-                    <div className='flex items-center justify-between'>
-                        
-                    </div>
                 </div>
             </div>
-            <div className="absolute top-0 left-0 z-10 w-full h-screen">
+            <div className="absolute top-0 left-0 z-10 w-full h-full">
                 <img 
-                    className='w-full h-full blur-sm object-cover'
+                    className='w-2/3 h-full blur-sm object-cover'
                     src={project?.imageURL} 
                     alt={project?.name} 
                 />

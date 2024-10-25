@@ -4,10 +4,11 @@ import { ReactNode } from "react";
 import Header from "./_layout/Header";
 import LenisProvider from "./_providers/LenisProvider";
 import { Toaster } from "@/components/ui/toaster";
+import { Footer } from "./_layout/Footer";
 
 export const metadata: Metadata = {
     title: "Construction Agency",
-    description: "",
+    description: "a prebuilt web template for digital agencies",
 };
 
 type TRootLayoutProps = {
@@ -20,6 +21,7 @@ export default function RootLayout({children}: TRootLayoutProps) {
                 <LenisProvider>
                     <Header/>
                     {children}
+                    <Footer/>
                     <Toaster />
                 </LenisProvider>
             </body>

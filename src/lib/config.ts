@@ -1,3 +1,3 @@
 export const config = {
-    template_email:"",
+    email:"blackwall@dummy.xyz",
 }
