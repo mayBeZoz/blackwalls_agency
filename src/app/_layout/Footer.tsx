@@ -1,5 +1,4 @@
 import { config } from "@/lib/config"
-import { div } from "framer-motion/client"
 
 const contacts = [
     {
