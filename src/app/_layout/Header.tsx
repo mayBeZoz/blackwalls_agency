@@ -18,11 +18,11 @@ function Header() {
         >
             <nav className="container h-[50px] flex justify-between items-center">
 
-                <Link href='/' className='font-vcr-osd-mono text-lg'>HOME</Link>
+                <Link href='/' className='font-vcr-osd-mono text-lg hover:opacity-75 duration-150'>HOME</Link>
                 
                 <h1 className='text-2xl sm:text-4xl font-disket-mono'>BlackWall</h1>
 
-                <Link href='/contact' className='font-vcr-osd-mono text-lg'>CONTACT</Link>
+                <Link href='/contact' className='font-vcr-osd-mono text-lg hover:opacity-75 duration-150'>CONTACT</Link>
 
             </nav>
         </motion.header>
